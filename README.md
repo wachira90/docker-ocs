@@ -23,9 +23,11 @@ localhost:8011/ocsreports
 
 ## FIX 
 
-copy config
+### copy config
 
 docker cp ocsinventory:/etc/opt/remi/php73/php.ini .
 
+### chang authen
 
+ALTER USER 'ocsuser'@'%' IDENTIFIED WITH mysql_native_password BY 'xxxx';
 
