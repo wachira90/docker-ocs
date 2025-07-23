@@ -1,0 +1,21 @@
+services:
+
+  ocsinventory:
+    image: ocsinventory/ocsinventory-docker-image:2.8
+    container_name : ocsinventory
+    restart: always
+    ports:
+      - 8011:80
+#      - 443:443
+    volumes:
+      - "./ocsdata/:/etc/ocsinventory-server"
+      - "./ocsreports/:/usr/share/ocsinventory-reports/ocsreports"
+      - "./ocslib/:/var/lib/ocsinventory-reports"
+      - "./ocsconfig/:/etc/httpd/conf.d"
+    environment:
+      OCS_DB_SERVER: 192.168.1.11
+      OCS_DB_USER: ocsuser
+      OCS_DB_PASS: OcsP4ssx1234
+      OCS_DB_NAME: ocsdb
+      OCS_SSL_ENABLED: 0
+      
