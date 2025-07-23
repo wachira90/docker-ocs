@@ -12,6 +12,7 @@ services:
       - "./ocsreports/:/usr/share/ocsinventory-reports/ocsreports"
       - "./ocslib/:/var/lib/ocsinventory-reports"
       - "./ocsconfig/:/etc/httpd/conf.d"
+      - "./php.ini:/etc/opt/remi/php73/php.ini"
     environment:
       OCS_DB_SERVER: 192.168.1.11
       OCS_DB_USER: ocsuser
